@@ -1,4 +1,7 @@
 :root {
+  --error: red;
+  --success: rgb(18, 151, 107);
+  --disabled: #acacac;
   --pink: #e75590;
   --blue: #00c2cb;
   --gray: #929292;
@@ -89,6 +92,11 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.input_container .input_border.error,
+.input_container .input_border.error::after {
+  background: var(--error);
+}
+
 .input:focus + .input_border::after {
   width: 100%;
 }
@@ -107,6 +115,19 @@ body {
   border-radius: 4px;
   cursor: pointer;
   transition: 0.5s ease-in-out;
+}
+
+.login_button:disabled {
+  background: var(--disabled);
+  cursor: not-allowed;
+}
+
+.login_button.error {
+  background: var(--error);
+}
+
+.login_button.success {
+  background: var(--success);
 }
 
 .login_button:hover {
